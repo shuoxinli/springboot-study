@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/api")
-@CrossOrigin("http://localhost:80")
+@CrossOrigin("http://localhost:80")  //解决跨域的
 public class CourseController {
     @Resource
     private CourseService courseService;

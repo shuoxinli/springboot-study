@@ -15,7 +15,7 @@ public interface CourseMapper {
             @Result(property = "courseCode",column = "course_code"),
             @Result(property = "finished",column = "finished"),
     })
-    @Select("SELECT * FROM t_course ")
+    @Select("SELECT * FROM Course ")
     List<Course> selectAll();
 
     @Results({
@@ -27,15 +27,15 @@ public interface CourseMapper {
             @Result(property = "courseCode",column = "course_code"),
             @Result(property = "finished",column = "finished"),
     })
-    @Select("SELECT * FROM t_course WHERE course_id = #{courseId} ")
+    @Select("SELECT * FROM Course WHERE course_id = #{courseId} ")
     Course getOne(Long courseId);
 
-    @Delete("DELETE FROM t_course WHERE course_id = #{courseId} ")
+    @Delete("DELETE FROM Course WHERE course_id = #{courseId} ")
     void delete(Long courseId);
 
-    @Insert("INSERT INTO t_course(course_name,user_id,course_class,cover,course_code,finished) VALUES(#{courseName},#{userId},#{courseClass},#{cover},#{courseCode},#{finished}) ")
+    @Insert("INSERT INTO Course(course_name,user_id,course_class,cover,course_code,finished) VALUES(#{courseName},#{userId},#{courseClass},#{cover},#{courseCode},#{finished}) ")
     void insert(Course course);
 
-    @Update("UPDATE t_course SET cover=#{cover},finished=#{finished} WHERE course_id =#{courseId}")
+    @Update("UPDATE Course SET cover=#{cover},finished=#{finished} WHERE course_id =#{courseId}")
     void update(Course course);
 }
