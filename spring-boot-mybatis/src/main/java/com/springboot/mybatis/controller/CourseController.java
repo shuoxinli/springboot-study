@@ -14,7 +14,6 @@ import java.util.List;
 public class CourseController {
     @Resource
     private CourseService courseService;
-
     /**
      * 查询所有班课
      *
